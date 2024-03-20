@@ -46,7 +46,7 @@ for(j in 1:1000)
   
   lm1 =lm(accel ~ dist + mag, data = atte.new)
   
-  ##Collects cohefficients
+  ##Collects coefficients
   
   boot.out=rbind(boot.out,coef(lm1))
 }
@@ -68,7 +68,7 @@ bt3=mean(boot.out[,3])
 
 print(c(bt1,bt2,bt3))
 
-##Original Cohefficients
+##Original Coefficients
 
 coef(lm0)
 
