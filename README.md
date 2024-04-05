@@ -46,14 +46,14 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
       
       lm1 =lm(accel ~ dist + mag, data = atte.new)
       
-##Collects coefficients
+# Collects coefficients
       
       boot.out=rbind(boot.out,coef(lm1))
     }
     
     
     
-##Plotting 
+# Plotting 
     
     par(mfrow=c(3,1))
     
