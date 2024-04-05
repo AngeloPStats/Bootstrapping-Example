@@ -74,3 +74,4 @@ coef(lm0)
 
 ```
 
+*.rmd linguist-language=R
