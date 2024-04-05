@@ -1,7 +1,7 @@
 # Bootstrapping-Example in R Studio code
 This R code showcases bootstrapping, ideal for situations with limited data. By resampling with replacement, it allows for reliable predictions and inferences. Additionally, it enhances estimate accuracy by replicating tables multiple times.
 
-# The R Studio code is below
+***The R Studio code is below***
 
     ---
     title: "Bootstrapping"
@@ -16,28 +16,32 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
     ```
 
     ```{r}
-## Bootstrapping example
-## This dataset is available in R
-    
+**Bootstrapping example**
+
+*This dataset is available in R*
+
+    ```{r} 
     data("attenu")
     dim(attenu)
     attach(attenu)
     head(attenu)
-    
-## Original dataset
-    
+    ``` 
+ *Original dataset*
+
+    ```{r} 
     lm0 = lm(accel ~ dist + mag , data = attenu)
     summary(lm0)
     plot(lm0)
-    
-# Replicating 1000 time the dataset 
-    
+    ```
+
+*Replicating 1000 time the dataset & Collecting coefficients*
+
+    ```{r} 
     index = seq(1,182,1)
     index
     
     boot.out=NULL
-    
-    
+        
     for(j in 1:1000)
     {
       index.new = sample(index,182,replace=T)
@@ -45,16 +49,17 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
       atte.new = attenu[index.new,]
       
       lm1 =lm(accel ~ dist + mag, data = atte.new)
-      
-# Collects coefficients
-      
+
+        
       boot.out=rbind(boot.out,coef(lm1))
     }
     
-    
-    
-# Plotting 
-    
+    ```
+
+**Plotting**
+
+    ```{r} 
+
     par(mfrow=c(3,1))
     
     hist(boot.out[,1])
