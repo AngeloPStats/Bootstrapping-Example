@@ -14,8 +14,7 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
     ```{r setup, include=FALSE}
     knitr::opts_chunk$set(echo = TRUE)
     ```
-
-    ```{r}
+    
 **Bootstrapping example**
 
 *This dataset is available in R*
