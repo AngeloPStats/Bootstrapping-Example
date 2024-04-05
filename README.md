@@ -16,21 +16,21 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
     ```
 
     ```{r}
-    ## Bootstrapping example
-    ## This dataset is available in R
+## Bootstrapping example
+## This dataset is available in R
     
     data("attenu")
     dim(attenu)
     attach(attenu)
     head(attenu)
     
-    ## Original dataset
+## Original dataset
     
     lm0 = lm(accel ~ dist + mag , data = attenu)
     summary(lm0)
     plot(lm0)
     
-    # Replicating 1000 time the dataset 
+# Replicating 1000 time the dataset 
     
     index = seq(1,182,1)
     index
@@ -46,14 +46,14 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
       
       lm1 =lm(accel ~ dist + mag, data = atte.new)
       
-      ##Collects coefficients
+##Collects coefficients
       
       boot.out=rbind(boot.out,coef(lm1))
     }
     
     
     
-    ##Plotting 
+##Plotting 
     
     par(mfrow=c(3,1))
     
@@ -73,4 +73,4 @@ This R code showcases bootstrapping, ideal for situations with limited data. By 
     coef(lm0)
     
     ```
-
+*.rmd linguist-language=R
